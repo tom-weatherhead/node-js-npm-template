@@ -1,0 +1,29 @@
+{
+  "name": "node-js-npm-template",
+  "version": "1.0.0",
+  "description": "A Node.js / npm project template",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tom-weatherhead/node-js-npm-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tom-weatherhead/node-js-npm-template/issues"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "start": "node script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Tom Weatherhead",
+    "url": "https://github.com/tom-weatherhead"
+  }
+}
