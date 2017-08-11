@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "description": "A Node.js / npm project template",
   "main": "script.js",
+  "homepage": "https://github.com/tom-weatherhead/node-js-npm-template#readme",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tom-weatherhead/node-js-npm-template.git"
+    "url": "git+https://github.com/tom-weatherhead/node-js-npm-template.git"
   },
   "bugs": {
     "url": "https://github.com/tom-weatherhead/node-js-npm-template/issues"
   },
-  "engines": {
-    "node": ">= 8.0.0"
-  },
   "scripts": {
     "start": "node script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=8.0.0"
   },
   "keywords": [
     "node",

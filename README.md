@@ -1,6 +1,10 @@
 # node-js-npm-template
 A Node.js / npm project template.
 
-To run the script, issue the following command:
+Installation instructions:
 
-npm start
+$ npm install
+
+To run the script:
+
+$ npm start
