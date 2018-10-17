@@ -1,0 +1,28 @@
+{
+	"name": "node-js-npm-template",
+	"description": "A Node.js / npm project template",
+	"homepage": "https://github.com/tom-weatherhead/node-js-npm-template#readme",
+	"main": "src/main",
+	"moduleType": [
+		"amd",
+		"globals",
+		"node"
+	],
+	"keywords": [
+		"node",
+		"npm"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"src",
+		"test",
+		"Gruntfile.js",
+		"package.json",
+		"package-lock.json"
+	],
+	"authors": [
+		"Tom Weatherhead"
+	],
+	"license": "MIT"
+}

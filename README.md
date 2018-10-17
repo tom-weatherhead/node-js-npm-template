@@ -3,8 +3,8 @@ A Node.js / npm project template.
 
 Installation instructions:
 
-$ npm install
+$ npm i
 
-To run the script:
+To lint and test the project using Grunt:
 
 $ npm start
