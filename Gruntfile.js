@@ -15,6 +15,24 @@ module.exports = grunt => {
 				'test/**/*.js'
 			]
 		},
+		jasmine: {
+			// pivotal: {
+			src: 'src/**/*.js',
+			options: {
+				// specs: 'spec/*Spec.js',
+				specs: 'test/jasmine/*_jasmine.js'
+				// helpers: 'spec/*Helper.js'
+			}
+			// }
+		},
+		karma: {
+			unit: {
+				/* options: {
+					files: ['test/karma/*_karma.js']
+				} */
+				configFile: 'karma.conf.js'
+			}
+		},
 		mochaTest: {
 			options: {
 				reporter: 'spec'
@@ -48,9 +66,11 @@ module.exports = grunt => {
 
 	// Tasks
 	grunt.loadNpmTasks('grunt-eslint');
-	grunt.loadNpmTasks('grunt-mocha-test');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	// grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-mocha-test');
 
 	// Aliases
 
@@ -62,8 +82,8 @@ module.exports = grunt => {
 
 	// grunt.registerTask('test', ['eslint', 'nodeunit']);
 
-	grunt.registerTask('test', ['eslint', 'mochaTest', 'nodeunit']);
-	// grunt.registerTask('test', ['eslint', 'nodeunit']);
+	// grunt.registerTask('test', ['eslint', 'jasmine', 'karma', 'mochaTest', 'nodeunit']);
+	grunt.registerTask('test', ['eslint', 'jasmine', 'mochaTest', 'nodeunit']);
 
 	grunt.registerTask('default', ['test']);
 };

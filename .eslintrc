@@ -3,9 +3,12 @@
 		"Buffer": true,
 		"console": true,
 		"describe": true,
+		"document": true,
+		"expect": true,
 		"it": true,
 		"module": true,
-		"require": true
+		"require": true,
+		"window": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 2018

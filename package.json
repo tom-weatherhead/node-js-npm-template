@@ -15,9 +15,16 @@
 		"chai": "^4.2.0",
 		"chai-http": "^4.2.0",
 		"grunt": "^1.0.3",
+		"grunt-contrib-jasmine": "^2.0.2",
 		"grunt-contrib-nodeunit": "^2.0.0",
 		"grunt-eslint": "^21.0.0",
+		"grunt-karma": "^3.0.0",
 		"grunt-mocha-test": "^0.13.3",
+		"jasmine-core": "^3.2.1",
+		"karma": "^3.0.0",
+		"karma-chrome-launcher": "^2.2.0",
+		"karma-jasmine": "^1.1.2",
+		"karma-phantomjs-launcher": "^1.0.4",
 		"mocha": "^5.2.0"
 	},
 	"scripts": {
