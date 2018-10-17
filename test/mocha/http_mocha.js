@@ -4,30 +4,57 @@
 
 'use strict';
 
+const http = require('http');
+
 const chai = require('chai');
+const chaiHttp = require('chai-http');
+
+chai.use(chaiHttp);
+
 const expect = chai.expect;
 
-const engine = require('../..');
+describe('App', () => {
+	const httpbinBaseUrl = 'https://httpbin.org';
+	const httpbinStatusBaseUrl = '/status/';
 
-describe('App', function () {
-	describe('helloWorld', () => {
-		it('Rocks!', done => {
+	describe(httpbinBaseUrl + ' : GET ' + httpbinStatusBaseUrl + '200', () => {
+		it('responds with status 200 OK', done => {
 			// Arrange
-			const expectedResult = 'Hello World!';
+			// const url = httpbinStatusBaseUrl + '200';
 
 			// Act
-			let actualResult = engine.helloWorld();
+			chai.request(httpbinBaseUrl)
+				.get(httpbinStatusBaseUrl + '200')
+				.end((err, res) => {
+					// Assert
+					expect(err).to.be.null;		// eslint-disable-line no-unused-expressions
+					expect(res).to.have.status(200);
 
-			// Assert
+					console.log(res.statusCode, 'Status message is:', http.STATUS_CODES[res.statusCode]);
 
-			// Chai.js has a flexible, fluent syntax for "expect" :
-			// expect(result).not.null;			// eslint-disable-line no-unused-expressions
-			// expect(result).to.not.be.null;	// eslint-disable-line no-unused-expressions
-			expect(actualResult).to.be.not.null;		// eslint-disable-line no-unused-expressions
+					done();
+				});
+		});
+	});
 
-			expect(actualResult).to.equal(expectedResult);
+	describe(httpbinBaseUrl + ' : GET ' + httpbinStatusBaseUrl + '404', () => {
+		it('responds with status 404 Not Found', done => {
+			// Arrange
+			// const url = httpbinStatusBaseUrl + '404';
 
-			done();
+			// Act
+			chai.request(httpbinBaseUrl)
+				.get(httpbinStatusBaseUrl + '404')
+				.end((err, res) => {
+					// Assert
+					expect(err).to.be.null;		// eslint-disable-line no-unused-expressions
+					expect(res).to.be.not.null;		// eslint-disable-line no-unused-expressions
+					expect(res).to.have.status(404);
+
+					console.log(res.statusCode, 'Status message is:', http.STATUS_CODES[res.statusCode]);
+
+					done();
+				});
 		});
 	});
 });
