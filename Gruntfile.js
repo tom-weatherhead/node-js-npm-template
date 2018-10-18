@@ -15,9 +15,10 @@ module.exports = grunt => {
 				'test/**/*.js'
 			]
 		},
+		/*
 		jasmine: {
 			// pivotal: {
-			src: 'src/**/*.js',
+			src: 'src/ ** /*.js', // TODO: Delete the spaces in this string.
 			options: {
 				// specs: 'spec/*Spec.js',
 				specs: 'test/jasmine/*_jasmine.js'
@@ -27,12 +28,15 @@ module.exports = grunt => {
 		},
 		karma: {
 			unit: {
-				/* options: {
-					files: ['test/karma/*_karma.js']
-				} */
+				options: {
+					files: [
+						'test/karma/*_karma.js'
+					]
+				},
 				configFile: 'karma.conf.js'
 			}
 		},
+		*/
 		mochaTest: {
 			options: {
 				reporter: 'spec'
@@ -43,13 +47,28 @@ module.exports = grunt => {
 		},
 		nodeunit: {
 			all: ['test/nodeunit/*_nodeunit.js']
+		},
+		run: {
+			/*
+			options: {
+				jest: {
+					testEnvironment: 'jsdom',
+					testMatch: [
+						'<rootDir>/test/jest/*_jest.js'
+					]
+				}
+			},
+			*/
+			npm_test_jest: {
+				exec: 'npm run test-jest --silent'
+			}
 		} /* ,
 		watch: {
 			js: {
 				files: [
 					'*.js',
 					'src/*.js',
-					'test/** /*.js' // TODO: Delete the space in the string.
+					'test/** /*.js' // TODO: Delete the space in this string.
 				],
 				tasks: 'build'
 			},
@@ -66,11 +85,12 @@ module.exports = grunt => {
 
 	// Tasks
 	grunt.loadNpmTasks('grunt-eslint');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	// grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	// grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-karma');
+	// grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-mocha-test');
+	grunt.loadNpmTasks('grunt-run');
 
 	// Aliases
 
@@ -80,10 +100,8 @@ module.exports = grunt => {
 	// New: $ npm i -D grunt grunt-cli grunt-eslint grunt-contrib-nodeunit grunt-nsp
 	// - Also install nodeunit-httpclient for Web tests.
 
-	// grunt.registerTask('test', ['eslint', 'nodeunit']);
-
 	// grunt.registerTask('test', ['eslint', 'jasmine', 'karma', 'mochaTest', 'nodeunit']);
-	grunt.registerTask('test', ['eslint', 'jasmine', 'mochaTest', 'nodeunit']);
+	grunt.registerTask('test', ['eslint', 'mochaTest', 'nodeunit', 'run:npm_test_jest']);
 
 	grunt.registerTask('default', ['test']);
 };

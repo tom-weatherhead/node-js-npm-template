@@ -8,6 +8,7 @@
 		"it": true,
 		"module": true,
 		"require": true,
+		"test": true,
 		"window": true
 	},
 	"parserOptions": {

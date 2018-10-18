@@ -11,25 +11,27 @@
 		"url": "https://github.com/tom-weatherhead/node-js-npm-template/issues"
 	},
 	"main": "src/main",
+	"scripts": {
+		"jest-coverage": "jest --coverage",
+		"start": "grunt",
+		"test": "grunt",
+		"test-jest": "jest"
+	},
+	"jest": {
+		"testMatch": [
+			"<rootDir>/test/jest/*_jest.js"
+		]
+	},
 	"devDependencies": {
 		"chai": "^4.2.0",
 		"chai-http": "^4.2.0",
 		"grunt": "^1.0.3",
-		"grunt-contrib-jasmine": "^2.0.2",
 		"grunt-contrib-nodeunit": "^2.0.0",
 		"grunt-eslint": "^21.0.0",
-		"grunt-karma": "^3.0.0",
 		"grunt-mocha-test": "^0.13.3",
-		"jasmine-core": "^3.2.1",
-		"karma": "^3.0.0",
-		"karma-chrome-launcher": "^2.2.0",
-		"karma-jasmine": "^1.1.2",
-		"karma-phantomjs-launcher": "^1.0.4",
+		"grunt-run": "^0.8.1",
+		"jest": "^23.6.0",
 		"mocha": "^5.2.0"
-	},
-	"scripts": {
-		"start": "grunt",
-		"test": "grunt"
 	},
 	"engineStrict": true,
 	"engines": {
