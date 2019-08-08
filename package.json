@@ -12,6 +12,8 @@
 	},
 	"main": "src/main",
 	"scripts": {
+		"build": "npm i && grunt",
+		"clean": "rm -rf node_modules && rm -f package-lock.json",
 		"jest-coverage": "jest --coverage",
 		"start": "grunt",
 		"test": "grunt",
@@ -24,18 +26,17 @@
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",
-		"chai-http": "^4.2.0",
-		"grunt": "^1.0.3",
-		"grunt-contrib-nodeunit": "^2.0.0",
-		"grunt-eslint": "^21.0.0",
+		"chai-http": "^4.3.0",
+		"grunt": "^1.0.4",
+		"grunt-eslint": "^22.0.0",
 		"grunt-mocha-test": "^0.13.3",
 		"grunt-run": "^0.8.1",
-		"jest": "^23.6.0",
-		"mocha": "^5.2.0"
+		"jest": "^24.8.0",
+		"mocha": "^6.2.0"
 	},
 	"engineStrict": true,
 	"engines": {
-		"node": ">=8.0.0"
+		"node": ">= 8"
 	},
 	"keywords": [
 		"node",
