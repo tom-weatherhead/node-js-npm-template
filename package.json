@@ -32,7 +32,7 @@
 		"grunt-mocha-test": "^0.13.3",
 		"grunt-run": "^0.8.1",
 		"jest": "^24.8.0",
-		"mocha": "^6.2.0"
+		"mocha": "^10.2.0"
 	},
 	"engineStrict": true,
 	"engines": {
